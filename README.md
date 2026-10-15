@@ -32,7 +32,7 @@ If the sounds folder is missing, run `python make_sounds.py` first to create it.
 
 My purpose for creating this software was to practice the core parts of a game (a game loop, several screens, moving sprites, input handling, scoring, and a difficulty system) while building something that encourages people to read and memorize Scripture.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/00iu6mEzYC0)
 
 # Development Environment
 

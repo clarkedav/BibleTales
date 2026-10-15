@@ -11,9 +11,16 @@ from pathlib import Path
 
 import arcade # pyright: ignore[reportMissingImports]
 
+#Get the path to the sounds folder relative to this file.
+
+#This allows the game to find audio files regardless of the working directory.
 # The sounds folder sits next to this file (created by make_sounds.py)
 SOUND_FOLDER = Path(__file__).resolve().parent / "sounds"
 
+
+#Map each sound effect name used in the game to its audio file.
+
+#Other parts of the game can play sounds using these names.
 # Sound name used in the game  ->  file in the sounds folder
 EFFECT_FILES = {
     "click": "click.wav",
@@ -25,12 +32,18 @@ EFFECT_FILES = {
     "victory": "victory.wav",
     "lose": "lose.wav",
 }
+
+# File used for the game's background music.
 MUSIC_FILE = "music.wav"
 MUSIC_VOLUME = 0.22          # background music is kept quiet on purpose
 
 
 class SoundManager:
-    """Loads and plays all sound effects and the looping music."""
+    """Manage loading and playback of sound effects and background music.
+
+Loads audio files once and provides methods to play sound effects,
+control background music, and handle audio errors without crashing the game.
+"""
 
     def __init__(self):
         """Load every sound file listed above."""
